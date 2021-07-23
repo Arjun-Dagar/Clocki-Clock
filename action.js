@@ -1,3 +1,8 @@
+window.onload = function(){
+  document.getElementById("preloader").style.display = "none";
+};
+
+
 setInterval(() => {
   var d = new Date();
   var hour = d.getHours();
