@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root{
+  --toping: calc(50vh-15px);
 }
 
 #preloader {
@@ -15,13 +21,14 @@
   background-color: rgb(24, 23, 23);
 }
 
-body {
-  height: 100vh;
+body{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  /* background: rgb(144 173 182); */
+  width: 200vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* transform: translateX(-100vw); */
+  transition: all 1s;
 }
 
 body::before {
@@ -35,6 +42,48 @@ body::before {
   opacity: 0.8;
 }
 
+#clock {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  position: relative;
+}
+
+.right-scroll{
+  position: absolute;
+  top: calc(50%-15px);
+  right: 20px;
+  width: 30px;
+  animation: breathing 1s linear  infinite  ;
+  transition: all 1s linear;
+}
+
+.right-scroll button{
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.right-scroll button img{
+  width: 100%;
+}
+
+@keyframes breathing {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
 #name {
   font-size: 3.2rem;
   font-family: "Zen Tokyo Zoo", cursive;
@@ -45,69 +94,69 @@ body::before {
   align-items: center;
 }
 
-#arjun{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    right: 450px;
-    position: relative;
+#arjun {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  right: 450px;
+  position: relative;
 }
 
 @media only screen and (max-width: 1160px) {
-    #arjun{
-        right: 400px;
-    }
+  #arjun {
+    right: 400px;
   }
+}
 @media only screen and (max-width: 1160px) {
-    #arjun{
-        right: 400px;
-    }
+  #arjun {
+    right: 400px;
   }
+}
 @media only screen and (max-width: 1050px) {
-    #arjun{
-        right: 350px;
-    }
+  #arjun {
+    right: 350px;
   }
+}
 @media only screen and (max-width: 950px) {
-    #arjun{
-        right: 300px;
-    }
+  #arjun {
+    right: 300px;
   }
+}
 @media only screen and (max-width: 850px) {
-    #arjun{
-        right: 250px;
-    }
+  #arjun {
+    right: 250px;
   }
+}
 @media only screen and (max-width: 750px) {
-    #arjun{
-        right: 200px;
-    }
+  #arjun {
+    right: 200px;
   }
+}
 @media only screen and (max-width: 700px) {
-    #arjun{
-        right: 150px;
-    }
+  #arjun {
+    right: 150px;
   }
+}
 @media only screen and (max-width: 550px) {
-    #arjun{
-        right: 100px;
-    }
+  #arjun {
+    right: 100px;
   }
+}
 @media only screen and (max-width: 460px) {
-    #arjun{
-        right: 50px;
-    }
+  #arjun {
+    right: 50px;
   }
+}
 @media only screen and (max-width: 370px) {
-    #arjun{
-        right: 25px;
-    }
+  #arjun {
+    right: 25px;
   }
+}
 @media only screen and (max-width: 300px) {
-    #arjun{
-        right: 20px;
-    }
+  #arjun {
+    right: 20px;
   }
+}
 
 #arjun p {
   font-size: 1.1rem;
@@ -185,4 +234,110 @@ body::before {
 #digital {
   text-align: center;
   font-family: "Lobster", cursive;
+}
+
+#timer {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  position: relative;
+}
+
+.left-scroll{
+  position: absolute;
+  top: 47vh;
+  /* top: calc(50vh-15px); */
+  left: 20px;
+  width: 30px;
+  animation: breathing 1s linear  infinite  ;
+  transition: all 1s linear;
+}
+
+.left-scroll button{
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.left-scroll button img{
+  width: 100%;
+}
+
+.third{
+  top: 47vh;
+}
+
+#input-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  justify-content: space-around;
+}
+
+#input-date h1{
+  text-align: center;
+}
+
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mn select{
+  margin-right: 0px;
+}
+
+@media only screen and (max-width: 656px) {
+  select{
+    margin-bottom: 10px;
+  }
+}
+
+#input-date button {
+  width: 50px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background: #3331be;
+  color: white;
+}
+
+#output-time {
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+
+.time:nth-child(4) {
+  margin-right: 0px;
+}
+
+.time p {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.time span {
+  font-size: 1.2rem;
 }
