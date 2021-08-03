@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400&display=swap');
 
 * {
   margin: 0;
@@ -30,6 +31,41 @@ body::before {
   background: url("./Images/bernard-hermant-PrZw3_3xUxI-unsplash.jpg") no-repeat
     center center/cover;
   opacity: 0.8;
+}
+
+#nav-bar{
+  display: flex;
+  width: 100vw;
+  background-color: #39393ab0;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#nav-bar ul{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+#nav-bar ul li{
+  list-style: none;
+  text-decoration: none;
+}
+
+#nav-bar ul li button{
+  background: none;
+  cursor: pointer;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #89e7ec;
+  transition: all 0.4s;
+}
+
+#nav-bar ul li button:hover{
+  color: #221ee6d7;
 }
 
 #wrapper{
@@ -255,6 +291,9 @@ body::before {
   font-family: "Poppins", sans-serif;
   width: 100vw;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .left-scroll {
@@ -290,6 +329,7 @@ body::before {
   align-items: center;
   height: 30vh;
   justify-content: space-around;
+  margin-bottom: 10vh;
 }
 
 #input-date h1 {
@@ -332,7 +372,7 @@ select {
 #output-time {
   display: flex;
   justify-content: center;
-  height: 70vh;
+  /* height: 70vh; */
 }
 
 .time {
@@ -341,7 +381,7 @@ select {
   margin-right: 25px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20vh;
+  /* margin-bottom: 20vh; */
 }
 
 .time:nth-child(4) {
@@ -360,10 +400,6 @@ select {
 @media only screen and (max-width: 600px) {
   .time p {
     font-size: 3rem;
-  }
-
-  #output-time {
-    height: 60vh;
   }
 
   #input-date {

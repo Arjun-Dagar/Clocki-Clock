@@ -163,18 +163,27 @@ function numeric(key) {
 }
 
 
-document.getElementById("first-button").addEventListener("click", function () {  
+document.getElementById("first-button").addEventListener("click", movetotimer);
+document.getElementById("second-button").addEventListener("click", movetoclock);
+document.getElementById("third-button").addEventListener("click", movetostpw);
+document.querySelectorAll('#nav-bar ul li button')[0].addEventListener("click", movetoclock);
+document.querySelectorAll('#nav-bar ul li button')[1].addEventListener("click", movetotimer);
+
+function movetotimer()
+{
   document.getElementById('timer').scrollIntoView({
     behavior: 'smooth'
   });
-})
+}
 
-document.getElementById("second-button").addEventListener("click", function () {  
+function movetoclock()
+{
   document.getElementById('clock').scrollIntoView({
     behavior: 'smooth'
   });
-})
+}
 
-document.getElementById("third-button").addEventListener("click", function () {  
+function movetostpw()
+{
   
-})
+}
