@@ -49,6 +49,23 @@ setInterval(() => {
   document.getElementById("month").textContent = monthNames[month];
   document.getElementById("year").textContent = year;
   document.getElementById("day").textContent = dayname[day];
+
+  if(date%10 == 1)
+  {
+    document.getElementById("suffix").textContent = "st";
+  }
+  else if(date%10 == 2)
+  {
+    document.getElementById("suffix").textContent = "nd";
+  }
+  else if(date%10 == 3)
+  {
+    document.getElementById("suffix").textContent = "rd";
+  }
+  else
+  {
+    document.getElementById("suffix").textContent = "th";
+  }
 }, 1000);
 
 var item;
@@ -147,16 +164,17 @@ function numeric(key) {
 
 
 document.getElementById("first-button").addEventListener("click", function () {  
-  // console.log("yes");
-  document.body.style.transform = "translateX(-100vw)";
+  document.getElementById('timer').scrollIntoView({
+    behavior: 'smooth'
+  });
 })
 
 document.getElementById("second-button").addEventListener("click", function () {  
-  // console.log("yes");
-  document.body.style.transform = "translateX(0vw)";
+  document.getElementById('clock').scrollIntoView({
+    behavior: 'smooth'
+  });
 })
 
 document.getElementById("third-button").addEventListener("click", function () {  
-  // console.log("yes");
-  document.body.style.transform = "translateX(-200vw)";
+  
 })
