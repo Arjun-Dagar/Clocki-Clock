@@ -22,6 +22,10 @@
   background-color: rgb(24, 23, 23);
 }
 
+body{
+  height: fit-content;
+}
+
 body::before {
   content: "";
   position: absolute;
