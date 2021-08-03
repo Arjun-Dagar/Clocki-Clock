@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --toping: calc(50vh-15px);
 }
 
@@ -21,14 +21,12 @@
   background-color: rgb(24, 23, 23);
 }
 
-body{
-  display: flex;
-  width: 200vw;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  /* transform: translateX(-100vw); */
+body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
   transition: all 1s;
+  overflow: hidden;
 }
 
 body::before {
@@ -48,38 +46,40 @@ body::before {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
-  position: relative;
+  /* width: 100vw; */
+  position: absolute;
+  width: 100%;
 }
 
-.right-scroll{
+.right-scroll {
   position: absolute;
   top: calc(50%-15px);
   right: 20px;
   width: 30px;
-  animation: breathing 1s linear  infinite  ;
+  animation: breathing 1s linear infinite;
   transition: all 1s linear;
+  z-index: 500;
 }
 
-.right-scroll button{
+.right-scroll button {
   width: 100%;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.right-scroll button img{
+.right-scroll button img {
   width: 100%;
 }
 
 @keyframes breathing {
-  0%{
+  0% {
     transform: scale(1);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
@@ -239,32 +239,34 @@ body::before {
 #timer {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  width: 100vw;
-  position: relative;
+  width: 100%;
+  position: absolute;
+  left: 100%;
 }
 
-.left-scroll{
+.left-scroll {
   position: absolute;
   top: 47vh;
   /* top: calc(50vh-15px); */
   left: 20px;
   width: 30px;
-  animation: breathing 1s linear  infinite  ;
+  animation: breathing 1s linear infinite;
   transition: all 1s linear;
+  z-index: 500;
 }
 
-.left-scroll button{
+.left-scroll button {
   width: 100%;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.left-scroll button img{
+.left-scroll button img {
   width: 100%;
 }
 
-.third{
+.third {
   top: 47vh;
 }
 
@@ -277,7 +279,7 @@ body::before {
   justify-content: space-around;
 }
 
-#input-date h1{
+#input-date h1 {
   text-align: center;
 }
 
@@ -296,12 +298,12 @@ select {
   align-items: center;
 }
 
-#mn select{
+#mn select {
   margin-right: 0px;
 }
 
 @media only screen and (max-width: 656px) {
-  select{
+  select {
     margin-bottom: 10px;
   }
 }
@@ -340,4 +342,28 @@ select {
 
 .time span {
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .time p {
+    font-size: 3rem;
+  }
+
+  #output-time {
+    height: 60vh;
+  }
+
+  #input-date {
+    height: 40vh;
+  }
+
+  #input-date h1 {
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .time p {
+    font-size: 2rem;
+  }
 }
